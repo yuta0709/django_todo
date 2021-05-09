@@ -3,6 +3,15 @@
 {% block title %}Todo List{% endblock %}
 
 {% block body %}
-<h1>Todo List</h1>
-
+    <h1>Todo List</h1>
+    <h2>タスク追加</h2>
+    <form action="" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="追加">
+    </form>
+    <h2>タスク一覧</h2>
+    {% for task in tasks %}
+        <p>{{ task }}</p>
+    {% endfor %}
 {% endblock %}
